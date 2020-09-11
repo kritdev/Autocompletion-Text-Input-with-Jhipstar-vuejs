@@ -6,7 +6,12 @@
             </h2>
         </div>
         <div class="row justify-content-center">
-            <autocomplete-dropdown></autocomplete-dropdown>
+            <autocomplete-dropdown
+                :options="lookupData"
+                :selectedField="'book'"
+                v-model="selectedBookName"
+                placeholder="Enter a book name"            
+            ></autocomplete-dropdown>
         </div>
     </div>
 </template>
