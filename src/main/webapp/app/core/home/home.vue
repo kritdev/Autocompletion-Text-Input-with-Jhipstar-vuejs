@@ -10,6 +10,8 @@
                 :options="lookupData"
                 :selectedField="'book'"
                 :onSelectedData="onSelectData"
+                :classProperty="{'valid': selectedBookName!=='', 'invalid': selectedBookName==='' }"
+                :required="true"
                 v-model="selectedBookName"
                 placeholder="Enter a book name"            
             ></autocomplete-dropdown>
