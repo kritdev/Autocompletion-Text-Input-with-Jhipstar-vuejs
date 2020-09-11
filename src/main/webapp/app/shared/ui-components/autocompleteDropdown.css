@@ -1,0 +1,48 @@
+.dropdown.open .suggestion-list {
+  display: block;
+}
+
+.dropdown .suggestion-list {
+  display: none;
+}
+
+.suggestion-list {
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ddd;
+  list-style: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: 2;
+}
+
+.toggle .arrow-up {
+  display: none;
+}
+
+.open .toggle .arrow-up {
+  display: inline-block;
+}
+
+.open .toggle .arrow-down {
+  display: none;
+}
+
+.suggestion-list li {
+  cursor: pointer;
+}
+
+.suggestion-list li:hover {
+  color: #fff;
+  background-color: #ccc;
+}
+
+.active {
+  color: #fff;
+  background-color: #42b983;
+}
