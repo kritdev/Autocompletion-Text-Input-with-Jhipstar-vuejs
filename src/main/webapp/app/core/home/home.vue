@@ -9,10 +9,14 @@
             <autocomplete-dropdown
                 :options="lookupData"
                 :selectedField="'book'"
+                :onSelectedData="onSelectData"
                 v-model="selectedBookName"
                 placeholder="Enter a book name"            
             ></autocomplete-dropdown>
         </div>
+        <br>
+        selectedBookName = {{selectedBookName}} <br>
+        selected book = {{selectedBook}}
     </div>
 </template>
 

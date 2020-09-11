@@ -21,6 +21,11 @@ export default class Home extends Vue {
   ];
 
   public selectedBookName = '';
+  public selectedBook = {};
+
+  public onSelectData(data) {
+    this.selectedBook = data;
+  }
 
   // ------- Sample end -------
 
