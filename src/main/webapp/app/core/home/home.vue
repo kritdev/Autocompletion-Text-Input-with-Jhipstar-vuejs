@@ -5,6 +5,9 @@
                 <span>Sample Autocompletion Text Input</span>
             </h2>
         </div>
+        <div class="row justify-content-center">
+            <autocomplete-dropdown></autocomplete-dropdown>
+        </div>
     </div>
 </template>
 

@@ -1,8 +1,13 @@
 import Component from 'vue-class-component';
 import { Inject, Vue } from 'vue-property-decorator';
 import LoginService from '@/account/login.service';
+import AutocompleteDropdown from '../../shared/ui-components/autocompleteDropdown.vue';
 
-@Component
+@Component({
+  components: {
+    'autocomplete-dropdown': AutocompleteDropdown,
+  },
+})
 export default class Home extends Vue {
   @Inject('loginService')
   private loginService: () => LoginService;
