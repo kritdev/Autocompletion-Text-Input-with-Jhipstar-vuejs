@@ -34,7 +34,7 @@ export default class AutocompleteDropdown extends Vue {
   get matches() {
     const optionArray = [];
 
-    if (this.displayField === '') {
+    if (this.displayField === '' || this.searchText === undefined) {
       return optionArray;
     }
 
