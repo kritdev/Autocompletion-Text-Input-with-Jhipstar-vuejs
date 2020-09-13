@@ -77,7 +77,7 @@ export default class AutocompleteDropdown extends Vue {
   public suggestionSelected(suggestion) {
     this.open = false;
 
-    if (suggestion) {
+    if (suggestion && this.searchText !== '') {
       this.searchText = suggestion[1][this.displayField];
     }
 
