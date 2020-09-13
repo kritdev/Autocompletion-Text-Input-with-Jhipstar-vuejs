@@ -29,6 +29,9 @@ export default class AutocompleteDropdown extends Vue {
   @Prop()
   value: any;
 
+  @Prop()
+  public additionalDisplayField: any;
+
   public displayField = '';
 
   get matches() {

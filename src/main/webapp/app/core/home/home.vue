@@ -9,6 +9,7 @@
             <autocomplete-dropdown
                 :options="lookupData"
                 :selectedField="'book'"
+                :additionalDisplayField="'author'"
                 :onSelectedData="onSelectData"
                 :classProperty="{'valid': selectedBookName!=='', 'invalid': selectedBookName==='' }"
                 :required="true"

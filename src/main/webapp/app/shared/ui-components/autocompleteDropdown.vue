@@ -22,6 +22,7 @@
         @click="suggestionSelected(suggestion)"
       >
         {{ suggestion[1][displayField] }}
+        <span v-if="additionalDisplayField"> - {{ suggestion[1][additionalDisplayField] }}</span>
       </li>
     </ul>
   </div>
