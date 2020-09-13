@@ -38,7 +38,7 @@ export default class AutocompleteDropdown extends Vue {
   get matches() {
     const optionArray = [];
 
-    if (this.displayField === '' || this.searchText === undefined) {
+    if (this.displayField === '' || this.searchText === undefined || !this.open) {
       return optionArray;
     }
 
@@ -84,7 +84,7 @@ export default class AutocompleteDropdown extends Vue {
     this.$emit('input', this.searchText);
 
     // callback
-    if (this.onSelectedData && suggestion) {
+    if (this.onSelectedData && suggestion && this.searchText !== '') {
       this.lastReturnSearchText = this.searchText;
       this.onSelectedData(suggestion[1]);
     } else {
