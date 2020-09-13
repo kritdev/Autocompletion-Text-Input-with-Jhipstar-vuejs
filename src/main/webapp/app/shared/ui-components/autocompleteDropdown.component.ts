@@ -1,4 +1,4 @@
-import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 
 @Component
 export default class AutocompleteDropdown extends Vue {
@@ -26,10 +26,10 @@ export default class AutocompleteDropdown extends Vue {
   @Prop()
   required: false;
 
-  public displayField = '';
+  @Prop()
+  value: any;
 
-  // @Prop()
-  // value: any = null;
+  public displayField = '';
 
   get matches() {
     const optionArray = [];
@@ -77,9 +77,6 @@ export default class AutocompleteDropdown extends Vue {
       this.searchText = suggestion[1][this.displayField];
     }
 
-    // return object
-    // this.$emit('input', suggestion[1]);
-
     // return selectedField
     this.lastSearchText = this.searchText;
     this.$emit('input', this.searchText);
@@ -113,23 +110,21 @@ export default class AutocompleteDropdown extends Vue {
   }
 
   public updateComponentWithValue(newValue) {
-    Object.keys(this.options).forEach(key => {
-      if (this.options[key] === newValue) {
-        this.searchText = newValue;
-      }
-    });
+    this.searchText = newValue;
+
+    if (!newValue || newValue === '') {
+      this.suggestionSelected(undefined);
+    }
   }
 
   public mounted() {
-    // this.updateComponentWithValue(this.value);
-
     this.displayField = this.selectedField.toString();
   }
 
-  // @Watch('value')
-  // public onPropertyChanged(newValue: any, oldValue: any) {
-  //   this.updateComponentWithValue(newValue);
-  // }
+  @Watch('value')
+  public onPropertyChanged(newValue: any, oldValue: any) {
+    this.updateComponentWithValue(newValue);
+  }
 }
 
 // *** credit - autocompletion ***
