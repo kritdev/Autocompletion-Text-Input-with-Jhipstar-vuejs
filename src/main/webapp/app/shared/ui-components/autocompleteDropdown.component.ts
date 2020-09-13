@@ -61,8 +61,6 @@ export default class AutocompleteDropdown extends Vue {
       // this.$refs.search.focus();
       // this.lastSearchText = this.searchText;
       this.searchText = '';
-    } else {
-      this.searchText = this.lastSearchText;
     }
   }
 
