@@ -7,6 +7,7 @@ export default class AutocompleteDropdown extends Vue {
   public open = false;
   public highlightIndex = 0;
   public lastSearchText = '';
+  public lastReturnSearchText = '';
 
   @Prop()
   options: Object;
@@ -86,9 +87,12 @@ export default class AutocompleteDropdown extends Vue {
 
     // callback
     if (this.onSelectedData && suggestion) {
+      this.lastReturnSearchText = this.searchText;
       this.onSelectedData(suggestion[1]);
     } else {
-      this.onSelectedData({});
+      if (this.lastReturnSearchText !== this.searchText) {
+        this.onSelectedData({});
+      }
     }
   }
 
